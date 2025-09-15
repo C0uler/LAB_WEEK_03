@@ -5,6 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/coffeeList">
+
+
     <fragment
         android:id="@+id/coffeeList"
         android:name="com.jordan.lab_week_03.ListFragment"
@@ -15,9 +17,11 @@
             app:destination="@id/coffeeDetail">
         </action>
     </fragment>
+
     <fragment
         android:id="@+id/coffeeDetail"
         android:name="com.jordan.lab_week_03.DetailFragment"
         android:label="Detail"
         tools:layout="@layout/fragment_detail" />
+
 </navigation>

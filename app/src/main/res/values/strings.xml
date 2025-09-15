@@ -12,6 +12,12 @@ extraction.)</string>
     <string name="latte_desc">A tall, mild \'milk coffee\' (about 150-300 ml). An
 espresso with steamed milk and only a little milk foam poured over it. Serve in a
 latte glass or a coffee cup. Flavored syrup can be added.</string>
+
+    <string name="cappuccino_title">CAPPUCCINO</string>
+    <string name="cappuccino_desc">An espresso-based coffee drink prepared with steamed milk and a thick, airy layer of milk foam. Typically smaller than a latte and served in a traditional cappuccino cup.</string>
+
+    <string name="macchiato_title">MACCHIATO</string>
+    <string name="macchiato_desc">An espresso shot \'marked\' with a small dollop of steamed milk foam. The name comes from the Italian for "stained" or "spotted". Served in a small demitasse cup.</string>
     <string name="coffee_list">Coffee List</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
