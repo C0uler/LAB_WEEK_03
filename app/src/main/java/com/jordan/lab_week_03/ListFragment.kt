@@ -6,27 +6,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 
-class ListFragment:Fragment(), View.OnClickListener{
+class ListFragment:Fragment(){
     private var param1: String? = null
     private var param2: String? = null
 
-    private lateinit var coffeeListener: CoffeeListener;
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if(context is CoffeeListener){
-            coffeeListener = context
-        }
-        else{
-            throw RuntimeException("Must implement CoffeeListener")
-        }
-    }
 
 
 
@@ -57,19 +47,25 @@ class ListFragment:Fragment(), View.OnClickListener{
             view.findViewById(R.id.latte)
         )
 
-        coffeeList.forEach{
-            it.setOnClickListener(this)
+//        coffeeList.forEach{
+//            it.setOnClickListener(this)
+//        }
+
+        coffeeList.forEach{ coffee ->
+            val fragmentBundle = Bundle()
+            fragmentBundle.putInt(COFFEE_ID, coffee.id)
+            coffee.setOnClickListener(
+                Navigation.createNavigateOnClickListener(
+                    R.id.coffee_id_action, fragmentBundle)
+            )
         }
     }
 
-    override fun onClick(v: View?) {
-        v?.let{
-                coffee -> coffeeListener.onSelected(coffee.id)
-        }
-    }
+
 
 
     companion object {
+        const val COFFEE_ID = "COFFEE_ID"
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
